@@ -16,7 +16,7 @@ Short records of the decisions that shape the project. Newest at the bottom.
 **Decision:** the backend only knows the aliases `qa-llm` and `qa-embeddings`; the provider is chosen in
 `infra/litellm/config.yaml`.
 **Why:** switching provider (OpenAI → Anthropic → Ollama) is a config change, not a code change.
-**Default:** OpenAI, because one API key covers chat and embeddings.
+**Default:** Gemini (Google AI Studio), because one API key covers chat and embeddings and has a free tier.
 
 ## 4. Compose layout
 **Decision:** the stack lives in `infra/docker-compose.yml`; the root `docker-compose.yml` only

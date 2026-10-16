@@ -15,7 +15,7 @@ React/Vite/TypeScript · Docker Compose
 ## Quick start
 
 ```bash
-cp .env.example .env     # then set OPENAI_API_KEY
+cp .env.example .env     # then set GEMINI_API_KEY
 docker compose up -d --build
 ```
 

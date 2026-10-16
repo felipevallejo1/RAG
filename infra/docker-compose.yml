@@ -61,7 +61,7 @@ services:
     restart: unless-stopped
     command: ["--config", "/app/config.yaml", "--port", "4000"]
     environment:
-      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      GEMINI_API_KEY: ${GEMINI_API_KEY}
       LITELLM_MASTER_KEY: ${LITELLM_MASTER_KEY}
     ports:
       - "127.0.0.1:${LITELLM_PORT}:4000"
