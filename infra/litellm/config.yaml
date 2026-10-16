@@ -1,0 +1,27 @@
+# LiteLLM proxy configuration.
+# The app only ever asks for the aliases below (`qa-llm`, `qa-embeddings`);
+# which provider answers is decided here, so switching needs no code changes.
+model_list:
+  - model_name: qa-llm
+    litellm_params:
+      model: openai/gpt-4o-mini
+      api_key: os.environ/OPENAI_API_KEY
+
+  - model_name: qa-embeddings
+    litellm_params:
+      model: openai/text-embedding-3-small
+      api_key: os.environ/OPENAI_API_KEY
+
+  # Example: use Anthropic for chat instead (add ANTHROPIC_API_KEY to .env and the
+  # litellm service environment in infra/docker-compose.yml). Anthropic has no
+  # embeddings API, so keep `qa-embeddings` on another provider.
+  # - model_name: qa-llm
+  #   litellm_params:
+  #     model: anthropic/claude-sonnet-5-5
+  #     api_key: os.environ/ANTHROPIC_API_KEY
+
+litellm_settings:
+  drop_params: true # silently drop params a given provider does not support
+
+general_settings:
+  master_key: os.environ/LITELLM_MASTER_KEY

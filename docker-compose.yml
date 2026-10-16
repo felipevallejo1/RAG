@@ -1,0 +1,8 @@
+# Entry point: `docker compose up` from the repo root.
+# The real stack lives in infra/; .env is passed explicitly so ${VARS} resolve
+# against the root .env (an included file otherwise looks next to itself).
+name: qa-platform
+
+include:
+  - path: infra/docker-compose.yml
+    env_file: .env
