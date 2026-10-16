@@ -1,0 +1,3 @@
+* text=auto
+# Shell scripts run inside Linux containers: force LF even when cloned on Windows
+*.sh text eol=lf
